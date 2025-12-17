@@ -78,9 +78,9 @@ activities = {
 }
 
 
-@app.get("/")
+@app.get("/", include_in_schema=False)
 def root():
-    return RedirectResponse(url="/static/index.html")
+    return RedirectResponse(url="/static/index.html", status_code=302)
 
 
 @app.get("/activities")
